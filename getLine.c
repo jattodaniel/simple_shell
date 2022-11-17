@@ -65,7 +65,7 @@ ssize_t get_input(info_t *info)
 	{
 		j = i; /* init new iterator to chrrent buf position */
 		p = buf + i; /* get pointer for return */
-		
+
 		check_chain(info, buf, &j, i, len);
 		while (j < len) /* iterate to semicolon or end */
 		{
@@ -80,7 +80,7 @@ ssize_t get_input(info_t *info)
 			i = len = 0; /* reset position and length */
 			info->cmd_buf_type = CMD_NORM;
 		}
-		
+
 		*buf_p = p; /* pass back pointer to current command position */
 		return (_strlen(p)); /* return length of current command */
 	}
@@ -130,7 +130,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 		s = *length;
 	if (i == len)
 		i = len = 0;
-	
+
 	r = read_buf(info, buf, &len);
 	if (r == -1 || (r == 0 && len == 0))
 		return (-1);
